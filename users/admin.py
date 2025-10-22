@@ -27,10 +27,14 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(MembershipCard)
 class MembershipCardAdmin(admin.ModelAdmin):
-    list_display = ("name", "code", "duration_months", "max_tours", "price", "popular")
+    list_display = (
+        "name", "code", "duration_months", "discount_tours", "price",
+        "bonus_amount", "monthly_limit", "popular",
+    )
     list_editable = ("popular",)
     search_fields = ("name", "code")
     list_filter = ("duration_months", "popular")
+
 
 @admin.register(UserMembership)
 class UserMembershipAdmin(admin.ModelAdmin):
@@ -39,10 +43,10 @@ class UserMembershipAdmin(admin.ModelAdmin):
     list_filter = ("is_active", "card")
     search_fields = ("user__email", "unique_code")
 
+
 @admin.register(Region)
 class RegionAdmin(admin.ModelAdmin):
-    list_display = ("name", "display_name", "rating", "price", "best_time", "rating")
-    list_filter = ("rating",)
+    list_display = ("name", "display_name", "best_time")
     search_fields = ("name", "display_name", "description")
 
 
@@ -56,7 +60,7 @@ class CountryAdmin(admin.ModelAdmin):
 
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
-    list_display = ("name", "country", "hotels", "rating", "best_time")
+    list_display = ("name", "country", "rating", "price", "best_time")
     list_filter = ("country__region", "country", "rating")
     search_fields = ("name", "country__name")
     list_select_related = ("country",)
@@ -64,8 +68,10 @@ class CityAdmin(admin.ModelAdmin):
 
 @admin.register(Tour)
 class TourAdmin(admin.ModelAdmin):
-    list_display = ("title", "user", "price", "created_at")
+    list_display = ("title", "user", "city", "price", "created_at")
 
 @admin.register(BonusHistory)
 class BonusHistoryAdmin(admin.ModelAdmin):
     list_display = ("referrer", "referred_user", "amount", "created_at")
+    list_filter = ("created_at",)
+    search_fields = ("referrer__email", "referred_user__email")
