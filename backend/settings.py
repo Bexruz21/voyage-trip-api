@@ -14,8 +14,7 @@ SECRET_KEY = 'django-insecure-hwauccimm=jue@y%7$wsm*pq27kv=%y$&njw=jtte1_1awpdo&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['voyage-trip-api.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
