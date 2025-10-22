@@ -33,15 +33,17 @@ class MembershipCardSerializer(serializers.ModelSerializer):
             'name',
             'code',
             'duration_months',
-            'max_tours',
             'price',
             'description',
             'features',
             'popular',
+            'discount_tours',
+            'discount_percent',
+            'extra_discount_tours',
+            'extra_discount_percent',
             'bonus_amount',
             'monthly_limit',
         ]
-
 
 class UserMembershipSerializer(serializers.ModelSerializer):
     card = MembershipCardSerializer(read_only=True)
