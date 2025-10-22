@@ -15,6 +15,7 @@ SECRET_KEY = 'django-insecure-hwauccimm=jue@y%7$wsm*pq27kv=%y$&njw=jtte1_1awpdo&
 DEBUG = True
 
 ALLOWED_HOSTS = ['voyage-trip-api.onrender.com', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://voyage-trip-api.onrender.com']
 
 # Application definition
 
