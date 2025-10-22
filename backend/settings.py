@@ -45,7 +45,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # твой Next.js
+    "https://voyagetrip.uz",
+    "https://www.voyagetrip.uz",
+    "http://localhost:3000"
 ]
 
 CORS_ALLOW_CREDENTIALS = True  # если используешь куки/авторизацию
