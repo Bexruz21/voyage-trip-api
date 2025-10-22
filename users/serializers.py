@@ -86,6 +86,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             'balance',
             'total_referrals',
             'active_membership',
+            'user_memberships',
             'referral_users',
             'bonus_history',
         ]
